@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base target="_top">
+        <title>Report CI/OPI User</title>
+        <!-- AdminLTE CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.css">
+        <!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">eet">
+
+    <style>
+            .disabled-button {
+                background-color: #e0e0e0 !important;
+                color: #999999 !important;
+                cursor: not-allowed !important;
+            }
+
+            .btn-modal {
+            text-decoration: underline;
+            color: blue;
+            padding: 0;
+            margin: 0 auto;
+            }
+            .button-up a {
+                background-color: white; color: black; border-bottom: 4px solid #E1E1E1; padding: 0.5rem;
+            }
+
+            .button-up a:hover {
+                border-bottom: 4px solid green;
+            }
+
+            .project-title input:focus {
+                outline: none; 
+            }
+
+            /* Style untuk label ketika checkbox tidak di-check */
+            .btn-check:not(:checked) + .custom-button {
+                background-color: #E1E1E1;
+                border: none;
+            }
+
+            /* Style untuk label ketika checkbox di-check */
+            .btn-check:checked + .custom-button {
+                background-color: #FFB21D;
+                border: none;
+                color: white;
+            }
+
+        </style>
+    </head>
+
+    <body class="sidebar-mini layout-fixed">
+    <?var url = getScriptUrl();?>
+        <div class="wrapper">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <!-- <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Home</a>
+                </li> -->
+                </ul>
+            </nav>
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-light-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="<?=url?>" class="brand-link">
+                    <div class="brand-text font-weight-light" style="text-align: center">
+                        <span class="font-weight-bold">SPIL</span>Organiser
+                    </div>
+                </a>
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-4">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                            data-accordion="false">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon"><img src="https://www.spil.co.id/img/spil_logo.581f4306.svg" alt="logo-spil" style="width: 4vh;"></i>
+                                    <p class="font-weight-bold" style="font-size: 10pt; padding-left: 16px;">Connecting Islands</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="form-inline mt-4">
+                            <div class="input-group mb-2" data-widget="sidebar-search">
+                                <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                                    aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-sidebar">
+                                        <i class="fas fa-search fa-fw"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+                            <!-- Add more sidebar menu items here -->
+                            <li class="nav-item border-bottom">
+                                <a href="<?=url?>" class="nav-link" target="_top">
+                                    <h5>
+                                        <b> My Activity </b>
+                                    </h5>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?=url?>" class="nav-link" target="_top">
+                                    <i class="nav-icon fa-circle-user fas"></i>
+                                    <p>
+                                        CI/OPI
+                                        <i class="right fas fa-angle-right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>
+                                                Master
+                                                <i class="right fas fa-angle-right"></i>
+                                            </p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        </br>
+                        
+                        <!-- Add more sidebar menu items here -->
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content" style="padding: 4vh;">
+                    <div class="container-fluid">
+                        <!-- Your content goes here -->
+                        <div class="container-fluid">
+                            <!-- Your content goes here -->
+                            <h3 style="font-weight: bold;">Improvement Plan</h3>
+                            <h4 style="font-weight: lighter;">Unlocking Excellent!</h4>
+                        </div>
+                        <div class="button-up" style="display: flex; justify-content: left; align-items: center; margin-left: 0.5rem; gap: 0.5rem;">
+                            <a href="myHistory.html">My History</a>
+                            <a href="needApproval.html">Need Approve</a>
+                            <a href="addCIOPI.html">Add / Edit</a>
+                        </div>
+                        <form action="" class="submit-form">
+                            <div class="project-title "
+                            style="display: flex; justify-content: center; align-items: center; padding: 0.6rem 1.3rem; background-color: #3D9970; margin: 1rem 0.5rem 0 0.5rem; border-radius: 15px; justify-content: center; align-items: center;">
+                                <h3 style="color: white; font-size: 40px; font-weight: 600; width: 30%; text-align: center;">Objective</h3>
+                                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group"
+                                style="display: flex; justify-content: space-around; align-items: center; width: 70%;">
+                                    <div class="btn" style="border: none; width: 40%;">
+                                        <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+                                        <label class="btn custom-button" for="btn-check" style="padding: 1rem;">Time Reduction</label>
+                                    </div>
+                                    <div class="btn" style="border: none; width: 40%;">
+                                        <input type="checkbox" class="btn-check" id="btn-check-2" checked autocomplete="off">
+                                        <label class="btn custom-button" for="btn-check-2" style="padding: 1rem;">Quality Improvement</label>
+                                    </div>
+                                    <div class="btn" style="border: none; width: 40%;">
+                                        <input type="checkbox" class="btn-check" id="btn-check-3" autocomplete="off">
+                                        <label class="btn custom-button" for="btn-check-3" style="padding: 1rem;">Cost Reduction</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submissiion-number" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Submisson Number</h4>
+                                <input type="text" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="submissiion-name" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Name</h4>
+                                <input type="text" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="division-department" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Division / Departement</h4>
+                                <input type="text" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="location" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Location</h4>
+                                <input type="text" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="current-situation" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Current Situation</h4>
+                                <input type="text" placeholder="Auto fill from improvement form" style="width: 70%; height: 8rem;" readonly>
+                            </div>
+                            <div class="idea" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Idea</h4>
+                                <input type="text" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="describe-your-idea" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Describe Your Idea</h4>
+                                <input type="text" id="suggestedPlan" name="suggestedPlan" placeholder="Tanya AI untuk Suggested Plan" readonly style="width: 68%; height: 4rem; margin-left: 0.5rem;">
+                                <button type="button" onclick="SuggestedPlan()">💡</button>
+                            </div>
+                            <div class="member" style="padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Team Members</h4>
+                                <div class="box" style="box-shadow: 10px 10px 20px rgba(172, 172, 172, 0.25); padding: 1rem; background-color: white; border-radius: 10px;">
+                                    <div style="margin-bottom: 1rem; display: flex; justify-content: flex-end; width: 100%;">
+                                        <button type="button" id="addMember" class="btn btn-success">Add</button>
+                                    </div>
+                                    <table class="table table-striped" style="text-align: center;">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" style="background-color: #3D9970; color: white; width: 5%;">No</th>
+                                            <th scope="col" style="background-color: #3D9970; color: white; width: 75%;">Team Members</th>
+                                            <th scope="col" style="background-color: #3D9970; color: white; width: 30%;">Role</th>
+                                            <th scope="col" style="background-color: #3D9970; color: white; width: 30%;">Action</th>
+                                        </thead>
+                                        <tbody id="bodyMember">
+                                        <tr style="text-align: center; justify-content: center;">
+                                            <td>1</td>
+                                            <td>
+                                                <input type="text" id="namaMember" placeholder="Input Nama Member" style="outline: none; border: none; text-align: center; width: 100%; background:transparent;">
+                                            </td>
+                                            <td>
+                                                <input type="text" id="roleMember" placeholder="Input Role Member" style="outline: none; border: none; text-align: center; background: transparent;">
+                                            </td>
+                                            <td>
+                                                <p style="text-align: center;">-</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="cost-needed" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Cost Needed (RP)</h4>
+                                <input type="number" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="potential-saving" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Potential Saving (RP)</h4>
+                                <input type="number" placeholder="Auto" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div class="formula" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Formula</h4>
+                                <textarea type="text" placeholder="Input Formula in Here" style="width: 70%; height: 8rem;"></textarea>
+                            </div>
+                            <div class="other-benefit" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Other Benefits (Cost Saving Excluded)</h4>
+                                <textarea type="text" placeholder="Input Other Benefits" style="width: 70%; height: 8rem;"></textarea>
+                            </div>
+                            <div class="need-approve" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Need Approve</h4>
+                                <div class="dropdown" style="width: 70%;">
+                                    <a class="btn dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 30%; text-align: left; background-color: white; color: black;">
+                                      Select
+                                    </a>
+                                  
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item">Action</a></li>
+                                      <li><a class="dropdown-item">Another action</a></li>
+                                      <li><a class="dropdown-item">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="potential-saving" style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem;">
+                                <h4 style="font-weight: bold; font-size: 20px; width: 30%;">Attachment</h4>
+                                <input type="file" style="width: 70%; text-align: center;" readonly>
+                            </div>
+                            <div style="margin-top: 2rem; display: flex; justify-content: flex-end; width: 100%;">
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailModal">Submit</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>                
+        </div>
+        <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+        </div>
+            <!-- /.content-wrapper -->
+
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-right d-none d-sm-inline">
+                    v1.0.0
+                </div>
+                <!-- Default to the left -->
+                <strong>2024 SPIL. Crafted by HRIS & HRIS Army</strong>
+            </footer>
+        </div>
+        
+        <!-- Pop-up Detail -->
+        <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailModalLabel">Submmission Confirm</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Isi dengan informasi detail -->
+                        <p style="text-align: center;">Are you sure want to submit this improvement form?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Yes, confirm</button>
+                        <!-- Tambahkan tombol lain jika diperlukan -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REQUIRED SCRIPTS -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- AdminLTE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Dropdown -->
+        <script>
+            // Fungsi untuk mengubah teks tombol dropdown saat opsi dipilih
+            function changeButtonText(option) {
+                // Ambil teks dari opsi yang dipilih
+                var optionText = option.textContent;
+                // Ubah teks tombol dropdown menjadi teks opsi yang dipilih
+                var dropdownToggle = option.closest('.dropdown').querySelector('.dropdown-toggle');
+                dropdownToggle.textContent = optionText;
+            }
+
+            // Fungsi untuk mengubah teks tombol dropdown saat opsi dipilih Assigned To
+            function selectAssignedto(assignedto, dropdownId) {
+            var dropdownToggle = document.getElementById(dropdownId);
+            dropdownToggle.textContent = assignedto;
+            }
+        </script>
+        <!-- Text Area -->
+        <script>
+            function adjustTextArea(textarea) {
+                textarea.style.height = 'auto';  // Reset tinggi
+                textarea.style.height = textarea.scrollHeight + 'px';  // Setel tinggi berdasarkan tinggi konten
+            }
+        </script>
+        <!-- Suggested Plan -->
+        <script>
+            function SuggestedPlan() {
+                var suggestedPlans = ["Melakukan Improvement di bagian spil university", "Menaikkan Produktivitas Bongkar muat", "Melakukan perbaikan secara berkelanjutan di kantor Kalianak"];
+                var suggestedPlanField = document.getElementById("suggestedPlan");
+
+                suggestedPlanField.value = suggestedPlans[Math.floor(Math.random() * suggestedPlans.length)];
+            }
+        </script>
+
+        <!-- Add Meassure of Succes -->
+        <script>
+            document.getElementById('addMemberBtn').addEventListener('click', function() {
+            var tbody = document.getElementById('tableBody');
+            var rowIndex = tbody.children.length;
+            var row = tbody.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);  // Cell for the delete button
+
+            cell1.innerHTML = rowIndex + 1;
+            cell2.innerHTML = `<textarea style="width: 100%; border: none; resize: none;" placeholder="Item">${document.getElementById('itemInput').value}</textarea>`;
+            
+            var newDropdown = document.querySelector('.dropdown').cloneNode(true);
+            var newButtonId = 'dropdown' + rowIndex;
+            newDropdown.querySelector('button').id = newButtonId;
+            newDropdown.querySelector('button').textContent = 'Select';  // Reset the button text
+            newDropdown.querySelector('.dropdown-menu').setAttribute('aria-labelledby', newButtonId);
+            newDropdown.querySelectorAll('.dropdown-item').forEach(function(item) {
+                item.setAttribute('onclick', `selectAssignedto('${item.textContent}', '${newButtonId}')`);
+            });
+            cell3.appendChild(newDropdown);
+
+            cell4.innerHTML = `<input type="number" value="${document.getElementById('baselineInput').value}" style="width: 100%; border: none;" placeholder="Baseline">`;
+            cell5.innerHTML = `<input type="number" value="${document.getElementById('targetInput').value}" style="width: 100%; border: none;" placeholder="Target">`;
+            cell6.innerHTML = `<textarea style="width: 100%; border: none; resize: none;" placeholder="Description">${document.getElementById('descriptionInput').value}</textarea>`;
+
+            // Add the delete button
+            cell7.innerHTML = `<button onclick="this.parentNode.parentNode.remove()" class="btn btn-danger"><i class="fas fa-times"></i></button>`;
+
+            // Clear the inputs
+            document.getElementById('itemInput').value = '';
+            document.getElementById('baselineInput').value = '';
+            document.getElementById('targetInput').value = '';
+            document.getElementById('descriptionInput').value = '';
+        });
+        </script>
+
+        <!-- Add Members -->
+        <script>
+            document.getElementById('addMember').addEventListener('click', function() {
+                var tbody = document.getElementById('bodyMember');
+                var rowIndex = tbody.children.length;  // Start numbering from 2 because 1 is already in HTML
+                var row = tbody.insertRow();
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+            
+                cell1.innerText = rowIndex + 1;
+                cell2.innerHTML = '<input type="text" placeholder="Input Nama Member" style="outline: none; border: none; text-align: center; width: 100%; background: transparent;">';
+                cell3.innerHTML = '<input type="text" placeholder="Input Role Member" style="outline: none; border: none; text-align: center; background: transparent;">';
+                cell4.innerHTML = `<button onclick="this.parentNode.parentNode.remove()" class="btn btn-danger"><i class="fas fa-times"></i></button>`;
+            });
+        </script>
+
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+
+</html>
