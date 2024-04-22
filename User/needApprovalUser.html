@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <base target="_top" />
+        <title>Need your Approval Your</title>
+        <!-- AdminLTE CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.css"
+        />
+        <!-- Font Awesome CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <!-- Google Font: Source Sans Pro -->
+        <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+        />
+        <style>
+        .disabled-button {
+            background-color: #e0e0e0 !important;
+            color: #999999 !important;
+            cursor: not-allowed !important;
+        }
+
+        .btn-modal {
+            text-decoration: underline;
+            color: blue;
+            padding: 0;
+            margin: 0 auto;
+        }
+        .button-up a {
+            background-color: white;
+            color: black;
+            border-bottom: 4px solid #e1e1e1;
+            padding: 0.5rem;
+        }
+
+        .button-up a:hover {
+            border-bottom: 4px solid green;
+        }
+
+        .project-title input:focus {
+            outline: none;
+        }
+        /* Tambahkan style untuk ikon pengguna */
+        .user-icon {
+            margin-bottom: 5px;
+        }
+
+        /* Gaya untuk tautan dalam modal */
+        .modal-content a {
+            color: black; /* Warna teks hitam */
+            text-decoration: none; /* Tanpa garis bawah */
+        }
+
+        .modal-content a:hover {
+            text-decoration: underline; /* Garis bawah saat digulir */
+        }
+        </style>
+    </head>
+
+    <body class="sidebar-mini layout-fixed">
+        <?var url = getScriptUrl();?>
+        <div class="wrapper">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"
+                    ><i class="fas fa-bars"></i
+                    ></a>
+                </li>
+                </ul>
+                <!-- Right Navbar -->
+                <ul class="navbar-nav ml-auto">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="fas fa-user-circle" style="margin-right: 8px"></i>
+                    <span class="d-none d-md-inline">User</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item">
+                        <!-- User image and details -->
+                        <div class="media">
+                        <i
+                            class="fas fa-user-circle fa-3x"
+                            style="margin-right: 10px"
+                        ></i>
+                        <div class="media-body">
+                            <h3 class="dropdown-item-title">User</h3>
+                            <p class="text-sm">Karyawan</p>
+                        </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a
+                        href="#"
+                        class="dropdown-item"
+                        data-toggle="modal"
+                        data-target="#accountModal"
+                        >Change Account</a
+                    >
+                    <a href="#" class="dropdown-item dropdown-footer">Logout</a>
+                    </div>
+                </li>
+                </ul>
+            </nav>
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-light-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="<?=url?>" class="brand-link">
+                <div class="brand-text font-weight-light" style="text-align: center">
+                    <span class="font-weight-bold">SPIL</span>Organiser
+                </div>
+                </a>
+                <!-- Sidebar -->
+                <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-4">
+                    <ul
+                    class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview"
+                    role="menu"
+                    data-accordion="false"
+                    >
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                        <i class="nav-icon"
+                            ><img
+                            src="https://www.spil.co.id/img/spil_logo.581f4306.svg"
+                            alt="logo-spil"
+                            style="width: 4vh"
+                        /></i>
+                        <p
+                            class="font-weight-bold"
+                            style="font-size: 10pt; padding-left: 16px"
+                        >
+                            Connecting Islands
+                        </p>
+                        </a>
+                    </li>
+                    </ul>
+                    <div class="form-inline mt-4">
+                    <div class="input-group mb-2" data-widget="sidebar-search">
+                        <input
+                        class="form-control form-control-sidebar"
+                        type="search"
+                        placeholder="Search"
+                        aria-label="Search"
+                        />
+                        <div class="input-group-append">
+                        <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+                    <ul
+                    class="nav nav-pills nav-sidebar flex-column"
+                    data-widget="treeview"
+                    role="menu"
+                    data-accordion="true"
+                    >
+                    <!-- Add more sidebar menu items here -->
+                    <li class="nav-item border-bottom">
+                        <a href="<?=url?>" class="nav-link" target="_top">
+                        <h5>
+                            <b> My Activity </b>
+                        </h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?=url?>" class="nav-link" target="_top">
+                        <i class="nav-icon fa-circle-user fas"></i>
+                        <p>
+                            CI/OPI
+                            <i class="right fas fa-angle-right"></i>
+                        </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>
+                                Master
+                                <i class="right fas fa-angle-right"></i>
+                            </p>
+                            </a>
+                        </li>
+                        </ul>
+                    </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <section class="content" style="padding: 4vh">
+                <div class="container-fluid">
+                    <!-- Your content goes here -->
+                    <div class="container-fluid">
+                    <!-- Your content goes here -->
+                    <h3 style="font-weight: bold">CI/OPI Online</h3>
+                    <h4 style="font-weight: lighter">Unlocking Excellent!</h4>
+                    </div>
+                    <div
+                    class="button-up"
+                    style="
+                        display: flex;
+                        justify-content: left;
+                        align-items: center;
+                        margin-left: 0.5rem;
+                        gap: 0.5rem;
+                    "
+                    >
+                    <a href="/User/myHistoryUser.html">My History</a>
+                    <a
+                        href="/User/needApprovalUser.html"
+                        style="border-bottom: 4px solid #3d9970"
+                        >Need Approve</a
+                    >
+                    <a href="/User/addCIOPIUser.html">Add / Edit</a>
+                    </div>
+                    <div class="row" style="margin-top: 1rem">
+                    <div class="col-lg-12">
+                        <div class="card">
+                        <div class="card-header">
+                            <div class="p3 row">
+                            <div
+                                class="col-sm-9"
+                                style="
+                                display: inline-flex;
+                                justify-content: space-between;
+                                "
+                            >
+                                <div class="card-title">
+                                <div
+                                    class="card-year"
+                                    style="
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-bottom: 0.5rem;
+                                    "
+                                >
+                                    <h3>Year</h3>
+                                    <div class="dropdown" style="margin-left: 2rem">
+                                    <button
+                                        class="btn btn-light dropdown-toggle"
+                                        style="width: 10rem"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        Select Year
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                        <a class="dropdown-item" href="#">2024</a>
+                                        </li>
+                                        <li>
+                                        <a class="dropdown-item" href="#">2023</a>
+                                        </li>
+                                        <li>
+                                        <a class="dropdown-item" href="#">2022</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <i class="fas fa-filter mr-1"></i>
+                                <span
+                                    class="font-weight-bold pl-2"
+                                    style="font-size: 20px"
+                                    >Need your Approval</span
+                                >
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table
+                            id="tablePeriod"
+                            class="table table-bordered table-hover table-sm"
+                            style="width: 100%; text-align: center"
+                            >
+                            <thead
+                                style="
+                                background-color: #3d9970;
+                                color: white;
+                                text-align: center;
+                                "
+                            >
+                                <tr>
+                                <th style="width: 5%">No</th>
+                                <th style="width: 10%">Doc. Number</th>
+                                <th style="width: 10%">Submit Date</th>
+                                <th>Title</th>
+                                <th style="width: 8%">Type</th>
+                                <th style="width: 10%">Last Approval</th>
+                                <th style="width: 8%">Last Status</th>
+                                <th style="width: 10%">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="CIOPITable">
+                                <td>1</td>
+                                <td>CIOPI-56549</td>
+                                <td>2024-04-20</td>
+                                <td>
+                                Optimalisasi MTA grade B & C untuk mengurangi
+                                penumpukan kontainer lama di CY Buffer
+                                </td>
+                                <td>New</td>
+                                <td>Apply</td>
+                                <td>Atasan</td>
+                                <td>
+                                <button
+                                type="button"
+                                class="btn btn-primary btn-sm"
+                                data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop"
+                                >
+                                View
+                                </button>
+                                </td>
+                            </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-right d-none d-sm-inline">v1.0.0</div>
+                <!-- Default to the left -->
+                <strong>2024 SPIL. Crafted by HRIS & HRIS Army</strong>
+            </footer>
+        </div>
+
+        <!-- Modal -->
+        <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog modal-dialog-scrollable" style="max-width: 70%;">
+            <div class="modal-content" style="background-color: #EAF4F0;">
+            <div class="modal-header" style="background-color: #3d9970;">
+                <h3 class="modal-title" id="staticBackdropLabel" style="font-size: 2rem; font-weight: bold; color: white; margin-left: 1rem;">
+                Improvement Form
+                </h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="color: white; border: none; background: none; font-size: 2rem; margin-bottom: 4px;">
+                <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 0 3rem">
+                <div
+                class="improvement-name"
+                style="display: flex; margin: 1rem 0"
+                >
+                <h5 style="width: 30%; font-weight: bold;">Name</h5>
+                <input
+                    type="text"
+                    readonly
+                    style="width: 70%; text-align: center"
+                    placeholder="auto"
+                />
+                </div>
+                <div
+                class="improvement-name"
+                style="display: flex; margin: 1rem 0"
+                >
+                <h5 style="width: 30%; font-weight: bold;">Background</h5>
+                <input
+                    type="text"
+                    readonly
+                    style="width: 70%; text-align: center"
+                    placeholder="auto"
+                />
+                </div>
+                <div
+                class="improvement-name"
+                style="display: flex; margin: 1rem 0"
+                >
+                <h5 style="width: 30%; font-weight: bold;">Improvement Benefit</h5>
+                <input
+                    type="text"
+                    readonly
+                    style="width: 70%; text-align: center"
+                    placeholder="auto"
+                />
+                </div>
+                <div class="improvement-name" style="margin: 1rem 0">
+                <h5 style="width: 30%; font-weight: bold;">Meassure of Succes</h5>
+                <table class="table" style="text-align: center;">
+                    <thead>
+                    <tr style="background-color: #3d9970; color: white;">
+                        <th scope="col">No</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">OUM</th>
+                        <th scope="col">Base Line</th>
+                        <th scope="col">Target</th>
+                        <th scope="col">Keterangan</th>
+                    </tr>
+                    </thead>
+                    <tbody style="background-color: white;">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Kecepatan</td>
+                        <td>1000</td>
+                        <td>1000</td>
+                        <td>1000</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Kecepatan</td>
+                        <td>1000</td>
+                        <td>1000</td>
+                        <td>1000</td>
+                        <td>-</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div
+                class="improvement-name"
+                style="display: flex; margin: 1rem 0"
+                >
+                <h5 style="width: 30%; font-weight: bold;">Current Action</h5>
+                <input
+                    type="text"
+                    readonly
+                    style="width: 70%; text-align: center"
+                    placeholder="auto"
+                />
+                </div>
+                <div
+                class="improvement-name"
+                style="display: flex; margin: 1rem 0"
+                >
+                <h5 style="width: 30%; font-weight: bold;">Suggested Action</h5>
+                <input
+                    type="text"
+                    readonly
+                    style="width: 70%; text-align: center"
+                    placeholder="auto"
+                />
+                </div>
+                <div
+                class="improvement-name"
+                >
+                <h5 style="width: 30%; font-weight: bold;">Team Member</h5>
+                <table class="table" style="text-align: center;">
+                    <thead>
+                    <tr style="background-color: #3d9970; color: white;">
+                        <th scope="col" style="width: 10%;">No</th>
+                        <th scope="col" style="width: 75%;">Team Member</th>
+                        <th scope="col" style="width: 30%;">Role</th>
+                    </tr>
+                    </thead>
+                    <tbody style="background-color: white;">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                <button type="button" class="btn btn-secondary" style="margin-left: 2.3rem">Revise</button>
+                <div class="btn-kanan" style="margin-right: 3.5rem;">
+                <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+                >
+                Reject
+                </button>
+                <button type="button" class="btn btn-success">Approve</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal untuk memilih akun -->
+        <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="accountModalLabel">Select Account</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-between">
+                            <!-- Pengguna 1 -->
+                            <div class="flex-fill mr-2 text-center">
+                                <a href="/HOD/needApprovalHOD.html" class="list-group-item">
+                                    <div class="user-icon">
+                                        <i class="fas fa-user fa-2x"></i> <!-- Icon Pengguna -->
+                                    </div>
+                                    <div>HOD</div> <!-- Teks Atasan -->
+                                </a>
+                            </div>
+                            <!-- Pengguna 2 -->
+                            <div class="flex-fill ml-2 text-center">
+                                <a href="/SM-GM/needApproval-SM-GM.html" class="list-group-item">
+                                    <div class="user-icon">
+                                        <i class="fas fa-user fa-2x"></i> <!-- Icon Pengguna -->
+                                    </div>
+                                    <div>Senior Manager</div> <!-- Teks Atasan -->
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- REQUIRED SCRIPTS -->
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- AdminLTE -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            google.script.run
+            .withSuccessHandler(function (data2) {
+                var data = JSON.parse(data2);
+                console.log(data);
+                data.sort((a, b) => {
+                let dateA = new Date(a[1]);
+                let dateB = new Date(b[1]);
+                return dateB - dateA;
+                });
+                for (let i = 0; i <= data.length; i++) {
+                var row = document.createElement("tr");
+
+                var cell = document.createElement("td");
+                cell.textContent = i + 1;
+                row.appendChild(cell);
+
+                var cell1 = document.createElement("td");
+                cell1.textContent = data[i][0];
+                row.appendChild(cell1);
+
+                var cell2 = document.createElement("td");
+                // Buat objek Date dari string tanggal dan waktu
+                const dateObj = new Date(data[i][2]);
+
+                // Ambil bagian tanggal dan formatnya sebagai 'YYYY-MM-DD'
+                const formattedDate = dateObj.toISOString().split("T")[0];
+                cell2.textContent = formattedDate;
+                row.appendChild(cell2);
+
+                var cell3 = document.createElement("td");
+                cell3.textContent = data[i][1];
+                row.appendChild(cell3);
+
+                var cell4 = document.createElement("td");
+                cell4.textContent = data[i][10];
+                row.appendChild(cell4);
+
+                var cell5 = document.createElement("td");
+                cell5.textContent = data[i][11];
+                row.appendChild(cell5);
+
+                var cell6 = document.createElement("td");
+                cell6.textContent = data[i][9];
+                row.appendChild(cell6);
+
+                var cell7 = document.createElement("td");
+                var a = document.createElement("a");
+                console.log(data[i]);
+                // a.setAttribute ('href', data[i][6]);
+                // a.setAttribute ('target', '_blank');
+                a.textContent = "Hapus";
+                a.setAttribute("data-toggle", "modal");
+                a.setAttribute("data-target", "#datamodalHO" + i);
+                a.setAttribute("class", "btn btn= btn-xs btn-modal");
+                cell7.appendChild(a);
+
+                document.getElementById("CIOPITable").appendChild(row);
+                }
+            })
+            .withFailureHandler(handleError)
+            .getImprovementPlan();
+        });
+
+        function handleError(error) {
+            console.error("Error : " + error);
+        }
+
+        //refresh page
+        function reload() {
+            google.script.run
+            .withSuccessHandler(function (url) {
+                window.open(url, "_top");
+            })
+            .getScriptUrl();
+        }
+        </script>
+    </body>
+</html>

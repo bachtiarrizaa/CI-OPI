@@ -12,8 +12,6 @@
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
             .disabled-button {
@@ -43,6 +41,20 @@
             .project-title input:focus {
                 outline: none; 
             }
+            /* Tambahkan style untuk ikon pengguna */
+        .user-icon {
+            margin-bottom: 5px;
+        }
+
+        /* Gaya untuk tautan dalam modal */
+        .modal-content a {
+            color: black; /* Warna teks hitam */
+            text-decoration: none; /* Tanpa garis bawah */
+        }
+
+        .modal-content a:hover {
+            text-decoration: underline; /* Garis bawah saat digulir */
+        }
         </style>
     </head>
 
@@ -56,9 +68,6 @@
                     <li class="nav-item">
                         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                     </li>
-                    <!-- <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
-                </li> -->
                 </ul>
             </nav>
             <!-- /.navbar -->
@@ -277,14 +286,6 @@
                         </form>
                 </div>
             </div>
-        </div>                
-        </div>
-        <!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-        </div>
-            <!-- /.content-wrapper -->
-
             <!-- Main Footer -->
             <footer class="main-footer">
                 <!-- To the right -->
@@ -325,6 +326,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
         <!-- Bootstrap 4 -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
         <!-- Dropdown -->
         <script>
@@ -419,9 +421,6 @@
                 cell4.innerHTML = `<button onclick="this.parentNode.parentNode.remove()" class="btn btn-danger"><i class="fas fa-times"></i></button>`;
             });
         </script>
-
-        <!-- Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 
 </html>
