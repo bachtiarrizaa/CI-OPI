@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <base target="_top" />
-    <title>Need your Approval Your</title>
+    <title>Need your Approval Finance</title>
     <!-- AdminLTE CSS -->
     <link
       rel="stylesheet"
@@ -61,10 +61,6 @@
       .modal-content a:hover {
         text-decoration: underline; /* Garis bawah saat digulir */
       }
-
-      .modal.fade:not(.show) .modal-content {
-        transition: none; /* Menghilangkan transisi saat modal tertutup */
-      }
     </style>
   </head>
 
@@ -87,7 +83,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
               <i class="fas fa-user-circle" style="margin-right: 8px"></i>
-              <span class="d-none d-md-inline">Atasan SM / GM</span>
+              <span class="d-none d-md-inline">Finance</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
               <a href="#" class="dropdown-item">
@@ -98,8 +94,8 @@
                     style="margin-right: 10px"
                   ></i>
                   <div class="media-body">
-                    <h3 class="dropdown-item-title">Atasan SM / GM</h3>
-                    <p class="text-sm">Senior Manager / General Manager</p>
+                    <h3 class="dropdown-item-title">User</h3>
+                    <p class="text-sm">Finance</p>
                   </div>
                 </div>
               </a>
@@ -227,13 +223,13 @@
                 gap: 0.5rem;
               "
             >
-              <a href="/SM-GM/myHistorySM-GM.html">My History</a>
+              <a href="#">My History</a>
               <a
-                href="/SM-GM/needApprovalSM-GM.html"
+                href="/Finance/needApprovalFinance.html"
                 style="border-bottom: 4px solid #3d9970"
                 >Need Approve</a
               >
-              <a href="/SM-GM/addCIOPISM-GM.html">Add / Edit</a>
+              <a href="#">Add / Edit</a>
             </div>
             <div class="row" style="margin-top: 1rem">
               <div class="col-lg-12">
@@ -331,7 +327,7 @@
                             type="button"
                             class="btn btn-primary btn-sm"
                             data-bs-toggle="modal"
-                            data-bs-target="#modal1"
+                            data-bs-target="#staticBackdrop"
                           >
                             View
                           </button>
@@ -355,254 +351,82 @@
       </footer>
     </div>
 
-    <!-- Modal 1 -->
+    <!-- Modal untuk memilih akun -->
     <div
-      class="modal slide-up"
-      id="modal1"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
+      class="modal fade"
+      id="accountModal"
       tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
+      role="dialog"
+      aria-labelledby="accountModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-scrollable" style="max-width: 40%">
-        <div class="modal-content" style="background-color: #eaf4f0">
-          <div class="modal-header" style="background-color: #3d9970">
-            <h3
-              class="modal-title"
-              id="staticBackdropLabel"
-              style="
-                font-size: 1.7rem;
-                font-weight: bold;
-                color: white;
-                margin-left: 1rem;
-              "
-            >
-              Form Submission
-            </h3>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="accountModalLabel">Select Account</h5>
             <button
               type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
+              class="close"
+              data-dismiss="modal"
               aria-label="Close"
-              style="
-                color: white;
-                border: none;
-                background: none;
-                font-size: 2rem;
-                margin-bottom: 4px;
-              "
             >
-              <i class="fa-solid fa-xmark"></i>
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body" style="padding: 0 2rem; margin-top: 1.5rem">
-            <div
-              class="cost-needed"
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem 0;
-              "
-            >
-              <h5 style="width: 30%">ID</h5>
-              <input
-                type="text"
-                readonly
-                style="width: 70%; text-align: center"
-                placeholder="auto"
-              />
-            </div>
-            <div
-              class="potential-saving"
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem 0;
-              "
-            >
-              <h5 style="width: 30%">Objective</h5>
-              <input
-                type="text"
-                readonly
-                style="width: 70%; text-align: center"
-                placeholder="auto"
-              />
-            </div>
-            <div
-              class="formula"
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem 0;
-              "
-            >
-              <h5 style="width: 30%">Idea</h5>
-              <input
-                type="text"
-                readonly
-                style="width: 70%; text-align: center"
-                placeholder="auto"
-              />
-            </div>
-            <div
-              class="actual-saving"
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: 1rem 0;
-              "
-            >
-              <h5 style="width: 30%">Describe Your Idea</h5>
-              <textarea
-                type="number"
-                style="width: 70%; text-align: center"
-                placeholder="auto"
-              ></textarea>
-            </div>
-            <div class="member" style="margin: 1rem 0" id="addMember">
-              <div
-                class="member-title"
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  margin-bottom: 1rem;
-                "
-              >
-                <h5 style="width: 30%">Member</h5>
-                <div
-                  class="btn-add"
-                  style="width: 70%; display: flex; justify-content: flex-end"
-                >
-                  <button
-                    type="button"
-                    id="addMemberBtn"
-                    class="btn btn-success"
-                  >
-                    Add
-                  </button>
-                </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-between">
+              <!-- Pengguna 1 -->
+              <div class="flex-fill mr-2 text-center">
+                <a href="/HOD/needApprovalHOD.html" class="list-group-item">
+                  <div class="user-icon">
+                    <i class="fas fa-user fa-2x"></i>
+                    <!-- Icon Pengguna -->
+                  </div>
+                  <div>HOD</div>
+                  <!-- Teks Atasan -->
+                </a>
               </div>
-              <table class="table table-striped" style="text-align: center">
-                <thead>
-                  <tr>
-                    <th
-                      scope="col"
-                      style="background-color: #3d9970; color: white; width: 5%"
-                    >
-                      No
-                    </th>
-                    <th
-                      scope="col"
-                      style="
-                        background-color: #3d9970;
-                        color: white;
-                        width: 75%;
-                      "
-                    >
-                      Team Members
-                    </th>
-                    <th
-                      scope="col"
-                      style="
-                        background-color: #3d9970;
-                        color: white;
-                        width: 30%;
-                      "
-                    >
-                      Role
-                    </th>
-                    <th
-                      scope="col"
-                      style="
-                        background-color: #3d9970;
-                        color: white;
-                        width: 30%;
-                      "
-                    >
-                      Action
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody id="bodyMember">
-                  <tr style="text-align: center; justify-content: center">
-                    <td>1</td>
-                    <td>
-                      <input
-                        type="text"
-                        id="namaMember"
-                        placeholder="Input Nama Member"
-                        style="
-                          outline: none;
-                          border: none;
-                          text-align: center;
-                          width: 100%;
-                          background: transparent;
-                        "
-                      />
-                    </td>
-                    <td>
-                      <input
-                        type="text"
-                        id="roleMember"
-                        placeholder="Input Role Member"
-                        style="
-                          outline: none;
-                          border: none;
-                          text-align: center;
-                          background: transparent;
-                        "
-                      />
-                    </td>
-                    <td>
-                      <p style="text-align: center">-</p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <!-- Pengguna 2 -->
+              <div class="flex-fill ml-2 text-center">
+                <a href="/SM-GM/needApprovalSM-GM.html" class="list-group-item">
+                  <div class="user-icon">
+                    <i class="fas fa-user fa-2x"></i>
+                    <!-- Icon Pengguna -->
+                  </div>
+                  <div>Senior Manager</div>
+                  <!-- Teks Atasan -->
+                </a>
+              </div>
+              <!-- Pengguna 3 -->
+              <div class="flex-fill ml-2 text-center">
+                <a href="/User/needApprovalUser.html" class="list-group-item">
+                  <div class="user-icon">
+                    <i class="fas fa-user fa-2x"></i>
+                    <!-- Icon Pengguna -->
+                  </div>
+                  <div>Karyawan</div>
+                  <!-- Teks Atasan -->
+                </a>
+              </div>
             </div>
           </div>
-          <div
-            class="modal-footer"
-            style="
-              display: flex;
-              justify-content: space-between;
-              margin-bottom: 1rem;
-            "
-          >
+          <div class="modal-footer">
             <button
               type="button"
-              class="btn-close btn-secondary"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              style="margin-left: 2rem"
+              class="btn btn-secondary"
+              data-dismiss="modal"
             >
-              Cancel
-            </button>
-            <button
-              type="button"
-              class="btn btn-success"
-              style="margin-right: 2rem"
-              data-bs-toggle="modal"
-              data-bs-target="#modal2"
-            >
-              Next
+              Close
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal 2 -->
+    <!-- Modal -->
     <div
-      class="modal"
-      id="modal2"
+      class="modal fade"
+      id="staticBackdrop"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
       tabindex="-1"
@@ -701,11 +525,11 @@
                 margin: 1rem 0;
               "
             >
-              <h5 style="width: 30%">Need Approve</h5>
+              <h5 style="width: 30%">Actual Saving</h5>
               <input
-                type="dropdown"
+                type="number"
                 style="width: 70%; text-align: center"
-                placeholder="auto"
+                placeholder="input actual saving"
               />
             </div>
             <div
@@ -736,12 +560,10 @@
           >
             <button
               type="button"
-              class="btn-secondary"
-              data-bs-toggle="modal"
-              data-bs-target="#modal1"
+              class="btn btn-secondary"
               style="margin-left: 2rem"
             >
-              Back
+              Revise
             </button>
             <button
               type="button"
@@ -749,78 +571,6 @@
               style="margin-right: 2rem"
             >
               Approve
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal untuk memilih akun -->
-    <div
-      class="modal fade"
-      id="accountModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="accountModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="accountModalLabel">Select Account</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="d-flex justify-content-between">
-              <!-- Pengguna 1 -->
-              <div class="flex-fill mr-2 text-center">
-                <a href="/HOD/needApprovalHOD.html" class="list-group-item">
-                  <div class="user-icon">
-                    <i class="fas fa-user fa-2x"></i>
-                    <!-- Icon Pengguna -->
-                  </div>
-                  <div>HOD</div>
-                  <!-- Teks Atasan -->
-                </a>
-              </div>
-              <!-- Pengguna 2 -->
-              <div class="flex-fill ml-2 text-center">
-                <a href="/SM-GM/needApprovalSM-GM.html" class="list-group-item">
-                  <div class="user-icon">
-                    <i class="fas fa-user fa-2x"></i>
-                    <!-- Icon Pengguna -->
-                  </div>
-                  <div>Senior Manager</div>
-                  <!-- Teks Atasan -->
-                </a>
-              </div>
-              <!-- Pengguna 3 -->
-              <div class="flex-fill ml-2 text-center">
-                <a href="/User/needApprovalUser.html" class="list-group-item">
-                  <div class="user-icon">
-                    <i class="fas fa-user fa-2x"></i>
-                    <!-- Icon Pengguna -->
-                  </div>
-                  <div>Karyawan</div>
-                  <!-- Teks Atasan -->
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
             </button>
           </div>
         </div>
@@ -917,28 +667,6 @@
           })
           .getScriptUrl();
       }
-    </script>
-
-    <!-- Add Members -->
-    <script>
-      document
-        .getElementById("addMemberBtn")
-        .addEventListener("click", function () {
-          var tbody = document.getElementById("bodyMember");
-          var rowIndex = tbody.children.length; // Start numbering from 2 because 1 is already in HTML
-          var row = tbody.insertRow();
-          var cell1 = row.insertCell(0);
-          var cell2 = row.insertCell(1);
-          var cell3 = row.insertCell(2);
-          var cell4 = row.insertCell(3);
-
-          cell1.innerText = rowIndex + 1;
-          cell2.innerHTML =
-            '<input type="text" placeholder="Input Nama Member" style="outline: none; border: none; text-align: center; width: 100%; background: transparent;">';
-          cell3.innerHTML =
-            '<input type="text" placeholder="Input Role Member" style="outline: none; border: none; text-align: center; background: transparent;">';
-          cell4.innerHTML = `<button onclick="this.parentNode.parentNode.remove()" class="btn btn-danger"><i class="fas fa-times"></i></button>`;
-        });
     </script>
   </body>
 </html>
