@@ -425,36 +425,20 @@
                           ></textarea>
                         </td>
                         <td style="width: 15%">
-                          <div class="dropdown">
-                            <button
-                              class="btn btn-light dropdown-toggle btn-sm"
-                              type="button"
-                              id="oumDropdown"
-                              data-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              style="width: 100%"
-                            >
-                              Select
-                            </button>
-                            <div
-                              class="dropdown-menu"
-                              aria-labelledby="dropdownMenuAssignedto"
-                            >
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                                onclick="selectAssignedto('Number', 'oumDropdown')"
-                                >Number</a
-                              >
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                                onclick="selectAssignedto('Percentage', 'oumDropdown')"
-                                >Percentage</a
-                              >
-                            </div>
-                          </div>
+                          <textarea
+                            oninput="adjustTextArea(this)"
+                            id="itemInput"
+                            placeholder="OUM"
+                            style="
+                              width: 100%;
+                              height: 2rem;
+                              outline: none;
+                              border: 2px solid #e1e1e1;
+                              border-radius: 5px;
+                              resize: none;
+                              overflow: hidden;
+                            "
+                          ></textarea>
                         </td>
                         <td style="width: 20%">
                           <input

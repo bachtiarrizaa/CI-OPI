@@ -142,6 +142,23 @@
         width: 70%;
         height: 8rem;
       }
+
+      /* Style untuk label ketika checkbox tidak di-check */
+      .btn-check:not(:checked) + .custom-button {
+        background-color: #e1e1e1;
+        border: none;
+      }
+
+      /* Style untuk label ketika checkbox di-check */
+      .btn-check:checked + .custom-button {
+        background-color: #ffb21d;
+        border: none;
+        color: white;
+      }
+
+      .btn-check {
+        display: none;
+      }
     </style>
 
     <!-- jQuery -->
@@ -163,6 +180,45 @@
             <a class="nav-link" data-widget="pushmenu" href="#">
               <i class="fas fa-bars" style="color: white"></i>
             </a>
+          </li>
+        </ul>
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link"
+              data-toggle="dropdown"
+              href="#"
+              style="color: white; margin-right: 1rem"
+            >
+              <i class="fas fa-user-circle" style="margin-right: 8px"></i>
+              <span class="d-none d-md-inline">User</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <a href="#" class="dropdown-item">
+                <!-- User image and details -->
+                <div class="media">
+                  <i
+                    class="fas fa-user-circle fa-3x"
+                    style="margin-right: 10px"
+                  ></i>
+                  <div class="media-body">
+                    <h3 class="dropdown-item-title">User</h3>
+                    <p class="text-sm">Karyawan</p>
+                  </div>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a
+                href="#"
+                class="dropdown-item"
+                data-toggle="modal"
+                data-target="#accountModal"
+                >Change Account</a
+              >
+              <a href="#" class="dropdown-item dropdown-footer">Logout</a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -259,267 +315,207 @@
             <h3 class="font-weight-bold">CI/OPI Online</h3>
             <h4 class="font-weight-light">Unlocking Excellent!</h4>
             <div class="btn-choice">
-              <a href="/Karyawan/myhistoryKaryawan.html">My History</a>
-              <a href="/Karyawan/needApprovalKaryawan.html">Need Approve</a>
-              <a
-                href="/Karyawan/addCi.html"
-                style="border-bottom: 4px solid #3d9970"
+              <a href="#">My History</a>
+              <a href="#">Need Approve</a>
+              <a href="#" style="border-bottom: 4px solid #3d9970"
                 >Add / Edit</a
               >
             </div>
             <form action="" class="submit-form">
-              <div class="project-title">
-                <h3>Project Title</h3>
-                <input type="text" placeholder="Input Project Title" />
+              <div
+                class="project-title"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding: 0.5rem 1rem;
+                  background-color: #3d9970;
+                  border-radius: 15px;
+                "
+              >
+                <h3
+                  style="
+                    color: white;
+                    font-size: 40px;
+                    font-weight: 600;
+                    width: 30%;
+                    text-align: center;
+                  "
+                >
+                  Objective
+                </h3>
+                <div
+                  class="btn-group"
+                  role="group"
+                  aria-label="Basic checkbox toggle button group"
+                  style="
+                    display: flex;
+                    justify-content: space-around;
+                    padding-top: 0.1rem;
+                    align-items: center;
+                    width: 70%;
+                  "
+                >
+                  <div class="btn" style="border: none; width: 40%">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check"
+                      autocomplete="off"
+                    />
+                    <label
+                      class="btn custom-button"
+                      for="btn-check"
+                      style="padding: 1rem"
+                      >Time Reduction</label
+                    >
+                  </div>
+                  <div class="btn" style="border: none; width: 40%">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-2"
+                      checked
+                      autocomplete="off"
+                    />
+                    <label
+                      class="btn custom-button"
+                      for="btn-check-2"
+                      style="padding: 1rem"
+                      >Quality Improvement</label
+                    >
+                  </div>
+                  <div class="btn" style="border: none; width: 40%">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-3"
+                      autocomplete="off"
+                    />
+                    <label
+                      class="btn custom-button"
+                      for="btn-check-3"
+                      style="padding: 1rem"
+                      >Cost Reduction</label
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="suggested-action">
-                <h4>Suggested Action</h4>
+
+              <div
+                class="submissiion-number"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Submisson Number
+                </h4>
+                <input
+                  type="text"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="submissiion-name"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Name
+                </h4>
+                <input
+                  type="text"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="division-department"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Division / Departement
+                </h4>
+                <input
+                  type="text"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="location"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Location
+                </h4>
+                <input
+                  type="text"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="current-situation"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Current Situation
+                </h4>
+                <textarea
+                  type="text"
+                  placeholder="Auto fill from improvement form"
+                  style="width: 70%; height: 8rem"
+                  readonly
+                ></textarea>
+              </div>
+              <div
+                class="idea"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Idea
+                </h4>
+                <input
+                  type="text"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="describe-your-idea"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Describe Your Idea
+                </h4>
                 <input
                   type="text"
                   id="suggestedPlan"
                   name="suggestedPlan"
                   placeholder="Tanya AI untuk Suggested Plan"
+                  readonly
+                  style="width: 68%; height: 4rem; margin-left: 0.5rem"
                 />
                 <button type="button" onclick="SuggestedPlan()">💡</button>
               </div>
-              <div class="submission-number">
-                <h4>Submission Number</h4>
-                <input type="text" placeholder="Auto" />
-              </div>
-              <div class="submission-name">
-                <h4>Name</h4>
-                <input type="text" placeholder="Auto" />
-              </div>
-              <div class="division-department">
-                <h4>Division / Departement</h4>
-                <input type="text" placeholder="Auto" />
-              </div>
-              <div class="location">
-                <h4>Location</h4>
-                <input type="text" placeholder="Auto" />
-              </div>
-              <div class="background">
-                <h4>Background</h4>
-                <textarea
-                  type="text"
-                  placeholder="Input Background Improvement"
-                ></textarea>
-              </div>
-              <div class="improvement-benefit">
-                <h4>Improvement Benefit</h4>
-                <textarea
-                  type="text"
-                  placeholder="Input Improvement Benefit"
-                ></textarea>
-              </div>
-              <div
-                class="meassure-of-success"
-                style="padding: 1rem 1.3rem 0.5rem 1.3rem"
-              >
-                <h4>Meassure Of Success</h4>
-                <div class="box">
-                  <div
-                    style="
-                      margin-bottom: 1rem;
-                      display: flex;
-                      justify-content: flex-end;
-                      width: 100%;
-                    "
-                  >
-                    <button
-                      type="button"
-                      id="addMemberBtn"
-                      class="btn btn-success"
-                    >
-                      Add
-                    </button>
-                  </div>
-                  <table class="table table-striped" style="width: 100%">
-                    <thead>
-                      <tr>
-                        <th
-                          scope="col"
-                          style="
-                            width: 5%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          No
-                        </th>
-                        <th
-                          scope="col"
-                          style="
-                            width: 20%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          Item
-                        </th>
-                        <th
-                          scope="col"
-                          style="
-                            width: 15%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          OUM
-                        </th>
-                        <th
-                          scope="col"
-                          style="
-                            width: 20%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          Baseline
-                        </th>
-                        <th
-                          scope="col"
-                          style="
-                            width: 20%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          Target
-                        </th>
-                        <th
-                          scope="col"
-                          style="
-                            width: 20%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          Description
-                        </th>
-                        <th
-                          scope="col"
-                          style="
-                            width: 20%;
-                            background-color: #3d9970;
-                            color: white;
-                          "
-                        >
-                          Action
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                      <tr>
-                        <td style="width: 5%">1</td>
-                        <td style="width: 20%">
-                          <textarea
-                            oninput="adjustTextArea(this)"
-                            id="itemInput"
-                            placeholder="Item"
-                            style="
-                              width: 100%;
-                              height: 2rem;
-                              outline: none;
-                              border: 2px solid #e1e1e1;
-                              border-radius: 5px;
-                              resize: none;
-                              overflow: hidden;
-                            "
-                          ></textarea>
-                        </td>
-                        <td style="width: 15%">
-                          <div class="dropdown">
-                            <button
-                              class="btn btn-light dropdown-toggle btn-sm"
-                              type="button"
-                              id="oumDropdown"
-                              data-toggle="dropdown"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              style="width: 100%"
-                            >
-                              Select
-                            </button>
-                            <div
-                              class="dropdown-menu"
-                              aria-labelledby="dropdownMenuAssignedto"
-                            >
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                                onclick="selectAssignedto('Number', 'oumDropdown')"
-                                >Number</a
-                              >
-                              <a
-                                class="dropdown-item"
-                                href="javascript:void(0)"
-                                onclick="selectAssignedto('Percentage', 'oumDropdown')"
-                                >Percentage</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                        <td style="width: 20%">
-                          <input
-                            type="number"
-                            id="baselineInput"
-                            placeholder="Baseline"
-                            style="
-                              width: 100%;
-                              outline: none;
-                              border: 2px solid #e1e1e1;
-                              border-radius: 5px;
-                            "
-                          />
-                        </td>
-                        <td style="width: 20%">
-                          <input
-                            type="number"
-                            id="targetInput"
-                            placeholder="Target"
-                            style="
-                              width: 100%;
-                              outline: none;
-                              border: 2px solid #e1e1e1;
-                              border-radius: 5px;
-                            "
-                          />
-                        </td>
-                        <td style="width: 20%">
-                          <textarea
-                            oninput="adjustTextArea(this)"
-                            id="descriptionInput"
-                            placeholder="Description"
-                            style="
-                              width: 100%;
-                              height: 2rem;
-                              outline: none;
-                              border: 2px solid #e1e1e1;
-                              border-radius: 5px;
-                              resize: none;
-                              overflow: hidden;
-                            "
-                          ></textarea>
-                        </td>
-                        <td>
-                          <p style="text-align: center">-</p>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="current-process">
-                <h4>Current Process</h4>
-                <textarea
-                  type="text"
-                  placeholder="Input Improvement Benefit"
-                ></textarea>
-              </div>
-              <div class="member">
-                <h4>Team Members</h4>
-                <div class="box">
+              <div class="member" style="padding: 1rem 1.3rem 0.5rem 1.3rem">
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Team Members
+                </h4>
+                <div
+                  class="box"
+                  style="
+                    box-shadow: 10px 10px 20px rgba(172, 172, 172, 0.25);
+                    padding: 1rem;
+                    background-color: white;
+                    border-radius: 10px;
+                  "
+                >
                   <div
                     style="
                       margin-bottom: 1rem;
@@ -621,11 +617,96 @@
                 </div>
               </div>
               <div
+                class="cost-needed"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Cost Needed (RP)
+                </h4>
+                <input
+                  type="number"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="potential-saving"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Potential Saving (RP)
+                </h4>
+                <input
+                  type="number"
+                  placeholder="Auto"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
+                class="formula"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Formula
+                </h4>
+                <textarea
+                  type="text"
+                  placeholder="Input Formula in Here"
+                  style="width: 70%; height: 8rem"
+                ></textarea>
+              </div>
+              <div
+                class="other-benefit"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Other Benefits (Cost Saving Excluded)
+                </h4>
+                <textarea
+                  type="text"
+                  placeholder="Input Other Benefits"
+                  style="width: 70%; height: 8rem"
+                ></textarea>
+              </div>
+              <div
+                class="need-approve"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Need Approve
+                </h4>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  style="width: 20rem"
+                >
+                  <option selected>Select</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div
+                class="potential-saving"
+                style="display: flex; padding: 1rem 1.3rem 0.5rem 1.3rem"
+              >
+                <h4 style="font-weight: bold; font-size: 20px; width: 30%">
+                  Attachment
+                </h4>
+                <input
+                  type="file"
+                  style="width: 70%; text-align: center"
+                  readonly
+                />
+              </div>
+              <div
                 style="
                   margin-top: 2rem;
                   display: flex;
                   justify-content: flex-end;
-                  margin-right: 2rem;
+                  width: 100%;
                 "
               >
                 <button
